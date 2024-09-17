@@ -1,2 +1,16 @@
-package com.gooot.annotation;public @interface RequestMapping {
+package com.gooot.annotation;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target({ElementType.TYPE,ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface RequestMapping {
+
+	String value() default "";
+
+	// method가 여러개 일수도 있어서 배열로 함
+	RequestMethod[] method() default {};
 }

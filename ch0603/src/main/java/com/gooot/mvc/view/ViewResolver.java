@@ -1,2 +1,5 @@
-package com.gooot.mvc.view;public class ViewResolver {
+package com.gooot.mvc.view;
+
+public interface ViewResolver {
+	View resolverView(String viewName);
 }

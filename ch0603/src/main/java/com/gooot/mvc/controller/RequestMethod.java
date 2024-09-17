@@ -1,2 +1,6 @@
-package com.gooot.mvc.controller;public class RequestMethod {
+package com.gooot.mvc.controller;
+
+public enum RequestMethod {
+	GET, POST, PUT, DELETE
+
 }

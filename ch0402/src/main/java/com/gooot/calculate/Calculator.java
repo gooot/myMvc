@@ -1,13 +1,6 @@
-package com.gooot;
+package com.gooot.calculate;
 
 import java.util.List;
-
-import com.gooot.calculate.AddithionOperator;
-import com.gooot.calculate.DivisionOperator;
-import com.gooot.calculate.MultiplicationOperator;
-import com.gooot.calculate.NewArithmeticOperator;
-import com.gooot.calculate.PositiveNumber;
-import com.gooot.calculate.SubtractionOperator;
 
 public class Calculator {
 

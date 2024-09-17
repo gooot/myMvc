@@ -1,5 +1,21 @@
 ### GET request to example server
-GET https://examples.http-client.intellij.net/get$END$
+GET https://examples.http-client.intellij.net/get
     ?generated-in=IntelliJ IDEA
 
 ###
+
+
+GET http://localhost:8080/calculate
+
+###
+GET http://localhost:8080/calculate?operand1=20&operator=-&operand2=10
+
+
+###
+
+GET http://localhost:8080/calculateGeneric?operand1=20&operator=-&operand2=20
+
+###
+
+
+GET http://localhost:8080/calculatorHttpServlet?operand1=20&operator=-&operand2=20

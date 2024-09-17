@@ -1,5 +1,15 @@
-### GET request to example server
-GET https://examples.http-client.intellij.net/get$END$
-    ?generated-in=IntelliJ IDEA
+#### GET request to example server
+#GET https://examples.http-client.intellij.net/get
+#    ?generated-in=IntelliJ IDEA
+#
+####
+
+// GET /calculate?operand1=11&operator=*&operand2=55
+GET http://localhost:8080/calculate?operand1=55&operator=+&operand2=11
+
+// 나누기(/)는 디코딩 해서 써야됨 안그러면 %2F 로 들어옴
 
 ###
+GET http://localhost:8080/calculate?operand1=55&operator=-&operand2=11
+
+

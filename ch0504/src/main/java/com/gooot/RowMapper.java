@@ -1,2 +1,8 @@
-package com.gooot;public interface RowMapper {
+package com.gooot;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public interface RowMapper {
+	Object map(ResultSet resultSet) throws SQLException;
 }
