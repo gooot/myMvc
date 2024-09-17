@@ -1,6 +1,8 @@
-package com.gooot.mvc.controller;
+package com.gooot.mvc;
 
 import java.util.Objects;
+
+import com.gooot.mvc.controller.RequestMethod;
 
 public class HandlerKey {
 

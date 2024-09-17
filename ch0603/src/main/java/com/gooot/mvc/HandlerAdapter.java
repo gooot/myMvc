@@ -1,7 +1,9 @@
-package com.gooot.mvc.view;
+package com.gooot.mvc;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.gooot.mvc.view.ModelAndView;
 
 public interface HandlerAdapter {
 
