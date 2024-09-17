@@ -10,8 +10,9 @@ import com.gooot.mvc.controller.HomeController;
 import com.gooot.mvc.controller.RequestMethod;
 import com.gooot.mvc.controller.UserCreateController;
 import com.gooot.mvc.controller.UserListController;
+import com.gooot.mvc.view.HandlerMapping;
 
-public class RequestMappingHandlerMapping {
+public class RequestMappingHandlerMapping implements HandlerMapping {
 
 	private Map<HandlerKey, Controller> mappings = new HashMap<>();
 

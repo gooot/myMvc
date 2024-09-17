@@ -20,6 +20,7 @@ import com.gooot.mvc.controller.Controller;
 import com.gooot.mvc.controller.HandlerKey;
 import com.gooot.mvc.controller.RequestMethod;
 import com.gooot.mvc.view.HandlerAdapter;
+import com.gooot.mvc.view.HandlerMapping;
 import com.gooot.mvc.view.JspViewResolver;
 import com.gooot.mvc.view.ModelAndView;
 import com.gooot.mvc.view.View;
@@ -30,7 +31,7 @@ public class DispatcherServlet extends HttpServlet {
 
 	private static final Logger log = LoggerFactory.getLogger(DispatcherServlet.class);
 
-	private RequestMappingHandlerMapping requestMappingHandlerMapping;
+	private HandlerMapping hm;
 
 	private List<HandlerAdapter> handlerAdapters;
 
@@ -38,8 +39,10 @@ public class DispatcherServlet extends HttpServlet {
 
 	@Override
 	public void init() throws ServletException {
-		requestMappingHandlerMapping = new RequestMappingHandlerMapping();
+		RequestMappingHandlerMapping requestMappingHandlerMapping = new RequestMappingHandlerMapping();
 		requestMappingHandlerMapping.init();
+
+		hm = requestMappingHandlerMapping;
 
 		handlerAdapters = List.of(new SimpleControllerHandlerAdapter());
 		viewResolvers = Collections.singletonList(new JspViewResolver());
@@ -55,7 +58,7 @@ public class DispatcherServlet extends HttpServlet {
 
 		log.info("[DispatcherServlet] service started.");
 		try {
-			Controller handler = requestMappingHandlerMapping.findHandler(new HandlerKey(RequestMethod.valueOf(request.getMethod()),request.getRequestURI()));
+			Object handler = hm.findHandler(new HandlerKey(RequestMethod.valueOf(request.getMethod()),request.getRequestURI()));
 			// String viewName = handler.handleRequest(request,response);
 
 			HandlerAdapter handlerAdapter = handlerAdapters.stream()
